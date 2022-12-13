@@ -1,5 +1,6 @@
 // express server
 const express = require('express');
+const cors = require('cors');
 // mongoose
 const mongoose = require('mongoose');
 mongoose.set('strictQuery', true);
