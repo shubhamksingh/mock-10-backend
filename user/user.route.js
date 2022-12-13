@@ -43,13 +43,13 @@ router.post('/login', async (req, res) => {
     }
     // check if password is correct
     if(user.password !== password) {
-        res.status(401).json({
+       return  res.status(401).json({
             message: 'Password is incorrect',
             // profile: user
         });
     }
     // login user
-    res.status(200).json({
+   return  res.status(200).json({
         message: 'User logged in successfully',
         profile: user,
         token: `${user._id}:${user.name}:${user.email}:${user.password}`
