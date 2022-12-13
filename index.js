@@ -6,7 +6,7 @@ mongoose.set('strictQuery', true);
 
 
 const app = express();
-const port = 8080;
+const port = process.env.PORT  || 8080;
 
 const userRoute = require('./user/user.route');
 
