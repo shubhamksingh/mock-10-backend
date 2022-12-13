@@ -12,8 +12,9 @@ const userRoute = require('./user/user.route');
 
 
 
-// express json middleware
+// express json               middleware
 app.use(express.json());
+app.use(express.urlencoded({extended: true}));
 
 // index route
 app.use('/user', userRoute);

@@ -51,7 +51,7 @@ router.post('/login', async (req, res) => {
     res.status(200).json({
         message: 'User logged in successfully',
         profile: user,
-        token: `${user.name}:${user.email}:${user.password}`
+        token: `${user._id}:${user.name}:${user.email}:${user.password}`
     });
 });
 
