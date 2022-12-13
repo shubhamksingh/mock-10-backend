@@ -10,6 +10,13 @@ router.post('/register', async (req, res) => {
     // get user data from request body
     const {name, email, password} = req.body;
     // create new user
+    if(name==null || name==undefined || name=='' || email==null || email==undefined || email=='' || password==null || password==undefined || password=='') {
+        return res.status(404).json({
+            message: 'User not found',
+           
+        });
+    }
+
     const newUser = new User({
         name,
         email,
@@ -22,7 +29,7 @@ router.post('/register', async (req, res) => {
         })
         .catch(err => console.log(err));
 
-    res.status(200).json({
+   return  res.status(200).json({
         message: 'User registered successfully',
         profile: newUser
     });
