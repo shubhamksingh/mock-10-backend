@@ -1,6 +1,7 @@
 // express server
 const express = require('express');
 const cors = require('cors');
+const emiRoute = require('./emi/emi.js');
 // mongoose
 const mongoose = require('mongoose');
 mongoose.set('strictQuery', true);
@@ -20,6 +21,7 @@ app.use(express.urlencoded({extended: true}));
 
 // index route
 app.use('/user', userRoute);
+app.use('/emi', emiRoute);
 
 app.get('/', (req, res) => {
     res.send('Hello World!');
